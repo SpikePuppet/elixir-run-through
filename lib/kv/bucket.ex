@@ -30,6 +30,8 @@ defmodule KV.Bucket do
   Almost like we're popping a value from the map - but at an arbitrary point!
   """
   def delete(bucket, key) do
-    Agent.get_and_update(bucket, &Map.pop(&1, key))
+    Agent.get_and_update(bucket, fn dict ->
+      Map.pop(dict, key)
+    end)
   end
 end
