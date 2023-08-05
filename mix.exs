@@ -7,6 +7,10 @@ defmodule KV.MixProject do
       app: :kv,
       version: "0.1.0",
       elixir: "~> 1.15",
+      # Mix.env lets you access env so we can configure based on it
+      # Start permanent means if something goes wrong in the Elixir
+      # supervision tree, the Erlang VM will crash too. Don't want
+      # that in dev/test since we could use it for debugging
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
