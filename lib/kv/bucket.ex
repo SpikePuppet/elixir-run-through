@@ -1,3 +1,4 @@
+# Each 'bucket' is a process, so each 'bucket' has a PID
 defmodule KV.Bucket do
   use Agent
 

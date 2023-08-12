@@ -6,7 +6,7 @@ defmodule KV.BucketTest do
   # Sets up a setup callback - a macro which runs before
   # every test
   setup do
-    {:ok, bucket} = KV.Bucket.start_link([])
+    bucket = start_supervised!(KV.Bucket)
     %{bucket: bucket}
   end
 
